@@ -62,7 +62,7 @@ from default constraintlayout. It's namespace-->
         </LinearLayout>        <!-- horizontal -->
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textView_name"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Name" />
@@ -73,10 +73,10 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Your name" />
+            android:hint="Your name" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email:" />
@@ -87,10 +87,10 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="Your email" />
+            android:hint="Your email" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/textView_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Phone:" />
@@ -101,11 +101,11 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:text="Your phone number"/>
+            android:hint="Your phone number"/>
 
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textView_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Gender:" />
@@ -134,7 +134,7 @@ from default constraintlayout. It's namespace-->
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Class" />
@@ -145,10 +145,10 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="6"
             android:inputType="number"
-            android:text="e.g.2012"/>
+            android:hint="e.g.2012"/>
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/textView_major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Major" />
@@ -159,7 +159,7 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="e.g. Physics" />
+            android:hint="e.g. Physics" />
 
         <LinearLayout
             android:layout_width="match_parent"
