@@ -5,6 +5,7 @@
 //https://stackoverflow.com/questions/2550099/how-to-kill-an-android-activity-when-leaving-it-so-that-it-cannot-be-accessed-fr
 //https://www.tutorialspoint.com/how-to-get-the-selected-index-of-a-radiogroup-in-android-using-kotlin
 //https://www.youtube.com/watch?v=S5uLAGnBvUY&ab_channel=Indently
+//https://github.com/sandipapps/RadioSave/blob/master/app/src/main/java/com/sandipbhattacharya/radiosave/MainActivity.java
 
 
 package ca.cmpt362.projects.myrun1
@@ -14,28 +15,22 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    //define valuables
-//    private lateinit var
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         loadData()
-
     }
 
     //This function is listening UI SAVE button click --> android:onClick="saveButtonClick" in xml file
     fun saveButtonClick(view: View) {
 
         // Text edit:
-        val nameEdit: EditText = findViewById(R.id.editText_name)
+        val nameEdit:EditText = findViewById(R.id.editText_name)  //------ Testing
         val nameString = nameEdit.text.toString()
         val emailEdit: EditText = findViewById(R.id.editText_email)
         val emailString = emailEdit.text.toString()
@@ -47,62 +42,66 @@ class MainActivity : AppCompatActivity() {
         val majorString = majorEdit.text.toString()
 
         // Radio buttons:
-        lateinit var selectedRadioValue: String
+        lateinit var selectedRadioString: String
         val radioGroup: RadioGroup = findViewById(R.id.radioGroup)
         val selectedRadioID: Int = radioGroup.checkedRadioButtonId
         if (selectedRadioID != -1) { //if no radio button is selected, selectedRadioID == -1
             val selectedRadio: RadioButton = findViewById(selectedRadioID)
-            selectedRadioValue = selectedRadio.text.toString()
+            selectedRadioString = selectedRadio.text.toString()
         } else {
-            selectedRadioValue = null.toString()
+            selectedRadioString = null.toString()
         }
-        println("------ SAVE BUTTON " + nameString + " " + emailString + " " + phoneString + " " + classString + " " + majorString + " " + selectedRadioValue)
 
-
-//        majorEdit.setText(majorString + " UPDATED!!")   //it works  ----- Test only
-
-
+        //Save data to file:
         val fileName = "profileMyRun1"
-        val setsharedPreferences: SharedPreferences =
-            this.getSharedPreferences(fileName, Context.MODE_PRIVATE)
+        val setsharedPreferences: SharedPreferences = this.getSharedPreferences(fileName, Context.MODE_PRIVATE)
         val editor: SharedPreferences.Editor = setsharedPreferences.edit()
         editor.apply{
             putString("name_key", nameString)
+            putString("email_key", emailString)
             putString("phone_key", phoneString)
+            putString("class_key", classString)
+            putString("major_key", majorString)
+            putString("radiobtn_key", selectedRadioString)
         }.apply()
 
-
-
-//        if (sharedPhoneValue.equals("defaultphone") && sharedNameValue.equals("defaultname")) {
-//            nameEdit.setText("default name: ${sharedNameValue}").toString()
-//            phoneEdit.setText("default id: ${sharedPhoneValue.toString()}")
-//        } else {
-//            nameEdit.setText(sharedNameValue).toString()
-//            phoneEdit.setText(sharedPhoneValue).toString()
-//        }
-
-        println(nameEdit)
-
+        finish()
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
     }
 
-    fun loadData(){
-        //        ------------ get shared preferences values -------
+
+    //get shared preferences values
+    private fun loadData(){
         val getSharedPreferences: SharedPreferences = getSharedPreferences("profileMyRun1", Context.MODE_PRIVATE)
-        val sharedNameValue : String? = getSharedPreferences.getString("name_key", "defaultname")
-        val sharedPhoneValue : String? = getSharedPreferences.getString("phone_key", "defaultphone")
+        val sharedNameValue : String? = getSharedPreferences.getString("name_key", null)
+        val sharedEmailValue : String? = getSharedPreferences.getString("email_key", null)
+        val sharedPhoneValue : String? = getSharedPreferences.getString("phone_key", null)
+        val sharedClassValue : String? = getSharedPreferences.getString("class_key", null)
+        val sharedMajorValue : String? = getSharedPreferences.getString("major_key", null)
+        val sharedRadioButton: String? = getSharedPreferences.getString("radiobtn_key", null)
 
-        val textView_name: TextView = findViewById(R.id.textView_name)
-        val textView_phone: TextView = findViewById(R.id.textView_phone)
-//        nameEdit.setText(sharedNameValue)
-//        phoneEdit.setText(sharedPhoneValue)
-        textView_name.text = sharedNameValue
-        textView_phone.text = sharedPhoneValue
+        val nameEdit:EditText = findViewById(R.id.editText_name)
+        nameEdit.setText(sharedNameValue)
+        val emailEdit: EditText = findViewById(R.id.editText_email)
+        emailEdit.setText(sharedEmailValue)
+        val phoneEdit: EditText = findViewById(R.id.editText_phone)
+        phoneEdit.setText(sharedPhoneValue)
+        val classEdit: EditText = findViewById(R.id.editText_class)
+        classEdit.setText(sharedClassValue)
+        val majorEdit: EditText = findViewById(R.id.editText_major)
+        majorEdit.setText(sharedMajorValue)
 
+        if (sharedRadioButton.equals("Female")){
+            val radioButton: RadioButton = findViewById(R.id.radio_female)
+            radioButton.setChecked(true)
+        }else if(sharedRadioButton.equals("Male")){
+            val radioButton: RadioButton = findViewById(R.id.radio_male)
+            radioButton.setChecked(true)
+        }
     }
 
     fun cancelButtonClick(view: View){
         finish()
     }
-
 
 }
