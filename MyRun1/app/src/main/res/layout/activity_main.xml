@@ -3,7 +3,6 @@
 from default constraintlayout. It's namespace-->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,11 +11,13 @@ from default constraintlayout. It's namespace-->
     tools:context=".MainActivity">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    >
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="591dp"
         android:layout_weight="1"
         android:orientation="vertical">
@@ -25,8 +26,7 @@ from default constraintlayout. It's namespace-->
             android:id="@+id/textView9"
             android:layout_width="358dp"
             android:layout_height="25dp"
-            android:text="Profile photo:" />
-
+            android:text="@string/photo"/>
 
 
         <LinearLayout
@@ -41,6 +41,7 @@ from default constraintlayout. It's namespace-->
                 android:layout_width="102dp"
                 android:layout_height="115dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/description"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Space
@@ -53,7 +54,7 @@ from default constraintlayout. It's namespace-->
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="Change" />
+                android:text="@string/button_change" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -65,7 +66,7 @@ from default constraintlayout. It's namespace-->
             android:id="@+id/textView_name"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:text="Name" />
+            android:text="@string/name" />
 
         <EditText
             android:id="@+id/editText_name"
@@ -73,13 +74,13 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Your name" />
+            android:hint="@string/your_name" />
 
         <TextView
             android:id="@+id/textView_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email:" />
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/editText_email"
@@ -87,13 +88,13 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="Your email" />
+            android:hint="@string/your_email" />
 
         <TextView
             android:id="@+id/textView_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone:" />
+            android:text="@string/phone" />
 
         <EditText
             android:id="@+id/editText_phone"
@@ -101,14 +102,14 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:hint="Your phone number"/>
+            android:hint="@string/your_phone"/>
 
 
         <TextView
             android:id="@+id/textView_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gender:" />
+            android:text="@string/gender" />
 
 
         <RadioGroup
@@ -122,14 +123,14 @@ from default constraintlayout. It's namespace-->
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Female" />
+                android:text="@string/female" />
 
             <RadioButton
                 android:id="@+id/radio_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Male" />
+                android:text="@string/male" />
 
         </RadioGroup>
 
@@ -137,7 +138,7 @@ from default constraintlayout. It's namespace-->
             android:id="@+id/textView_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Class" />
+            android:text="@string/class_year" />
 
         <EditText
             android:id="@+id/editText_class"
@@ -145,13 +146,13 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="6"
             android:inputType="number"
-            android:hint="e.g.2012"/>
+            android:hint="@string/your_class"/>
 
         <TextView
             android:id="@+id/textView_major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Major" />
+            android:text="@string/major" />
 
         <EditText
             android:id="@+id/editText_major"
@@ -159,7 +160,7 @@ from default constraintlayout. It's namespace-->
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="e.g. Physics" />
+            android:hint="@string/your_major" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,7 +173,7 @@ from default constraintlayout. It's namespace-->
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:onClick="saveButtonClick"
-                android:text="Save"
+                android:text="@string/save"
                 />
 
             <Space
@@ -184,7 +185,7 @@ from default constraintlayout. It's namespace-->
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:onClick="cancelButtonClick"
-                android:text="Cancel" />
+                android:text="@string/cancel" />
 
         </LinearLayout> <!-- save + cancel horizontal -->
 

@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">MyRun1HW</string>
+    <string name="app_name">MyRun1-Profile</string>
+    <string name="photo">Profile photo:</string>
+    <string name="description">Profile picture in here</string>
+    <string name="button_change">Change</string>
+    <string name="name">Name:</string>
+    <string name="email">Email:</string>
+    <string name="phone">Phone:</string>
+    <string name="gender">Gender:</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="class_year">Class:</string>
+    <string name="major">Major:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="your_name">Your name</string>
+    <string name="your_email">Your email</string>
+    <string name="your_phone">Your phone number</string>
+    <string name="your_class">e.g.2012</string>
+    <string name="your_major">e.g. Physics</string>
 </resources>
