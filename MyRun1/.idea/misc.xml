@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/profile_photo.xml" value="0.2557291666666667" />
+        <entry key="app/src/main/res/xml/file_paths.xml" value="0.1484375" />
       </map>
     </option>
   </component>

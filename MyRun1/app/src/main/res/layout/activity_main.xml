@@ -3,6 +3,7 @@
 from default constraintlayout. It's namespace-->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,31 +36,33 @@ from default constraintlayout. It's namespace-->
             android:orientation="horizontal"
             tools:ignore="NestedWeights">
 
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="102dp"
-                android:layout_height="115dp"
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:contentDescription="@string/description"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/profile_photo_foreground"
+                android:scaleType="center"/>
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/change_button"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:onClick="changeButtonClick"
                 android:text="@string/button_change" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1" />
+
         </LinearLayout>        <!-- horizontal -->
 
         <TextView
